@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "M. Fazri Nizar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -14.5,
+      "left": 33.4,
+      "attrs": { "builder": "esp32-core-2.0.5" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 0.3,
+      "left": -91.8,
+      "attrs": { "humidity": "51.5", "temperature": "58.7" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.2,
+      "left": -15.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80.2,
+      "left": -20.05,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D13", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led1:A", "r1:2", "red", [ "v0" ] ],
+    [ "r1:1", "esp:D12", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

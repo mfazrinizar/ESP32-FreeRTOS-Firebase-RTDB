@@ -1,0 +1,6 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+DHT sensor library
+Firebase Arduino Client Library for ESP8266 and ESP32
+Adafruit Unified Sensor
