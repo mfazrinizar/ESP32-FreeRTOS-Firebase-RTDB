@@ -1,18 +1,24 @@
 #include <Arduino.h>
+#include "Config.h"
+#include "FirebaseHandler.h"
+#include "Tasks.h"
 
-// put function declarations here:
-int myFunction(int, int);
+void setup()
+{
+  Serial.begin(115200);
+  loadConfig();
+  wifiConnection();
+  initFirebase();
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  // Initialize the command path
+  initializeCommands();
+
+  // Create tasks with reasonable stack sizes
+  xTaskCreate(ProducerTask, "Producer Task", 50000, NULL, 1, NULL); // Higher priority
+  xTaskCreate(ConsumerTask, "Consumer Task", 50000, NULL, 1, NULL); // Lower priority
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+  // FreeRTOS handles the task scheduling
 }
