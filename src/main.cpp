@@ -14,8 +14,8 @@ void setup()
   initializeCommands();
 
   // Create tasks with reasonable stack sizes
-  xTaskCreate(ProducerTask, "Producer Task", 50000, NULL, 1, NULL); // Higher priority
-  xTaskCreate(ConsumerTask, "Consumer Task", 50000, NULL, 1, NULL); // Lower priority
+  xTaskCreate(ProducerTask, "Producer Task", 50000, NULL, 1, NULL);
+  xTaskCreate(ConsumerTask, "Consumer Task", 50000, NULL, 1, NULL);
 }
 
 void loop()
