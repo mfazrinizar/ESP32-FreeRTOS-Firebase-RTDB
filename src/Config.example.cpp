@@ -56,8 +56,8 @@
 //     // // Close the file
 //     // envFile.close();
 
-//     const char *API_KEY = "YOUR_API_KEY";
-//     const char *DATABASE_URL = "YOUR_DATABASE_URL";
-//     const char *WIFI_SSID = "YOUR_WIFI_SSID";
-//     const char *WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
+//     API_KEY = "YOUR_API_KEY";
+//     DATABASE_URL = "YOUR_DATABASE_URL";
+//     WIFI_SSID = "YOUR_WIFI_SSID";
+//     WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 // }
